@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/middle"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe motion:dragDirection="dragLeft" />
+        <OnClick motion:targetId="@id/btnSelanjutnya"
+            motion:clickAction="transitionToEnd" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="550dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:id="@+id/imageView" />
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintHorizontal_bias="0.465"
+            motion:layout_constraintTop_toBottomOf="@id/imageView"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp" />
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            motion:layout_constraintStart_toStartOf="@+id/button"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/button" />
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            motion:layout_constraintEnd_toEndOf="@+id/button"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/button" />
+        <Constraint
+            android:id="@+id/imageFilterView8"
+            motion:layout_constraintEnd_toStartOf="@+id/btnSelanjutnya"
+            motion:layout_constraintStart_toEndOf="@+id/btnLewati"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="80dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/imageFilterView7"
+            motion:layout_constraintStart_toEndOf="@+id/imageFilterView8"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/imageFilterView9"
+            motion:layout_constraintStart_toEndOf="@+id/imageFilterView7"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            motion:layout_constraintVertical_bias="0.555"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_marginTop="216dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:id="@+id/imageView3"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="550dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="550dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/imageView"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/imageFilterView8"
+            motion:layout_constraintEnd_toStartOf="@+id/btnSelanjutnya"
+            motion:layout_constraintStart_toEndOf="@+id/btnLewati"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="80dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/imageFilterView7"
+            motion:layout_constraintStart_toEndOf="@+id/imageFilterView8"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/imageFilterView9"
+            motion:layout_constraintStart_toEndOf="@+id/imageFilterView7"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            motion:layout_constraintVertical_bias="0.555"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+        <Constraint
+            android:layout_height="550dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:id="@+id/imageView3"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="550dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/btnSelanjutnya"
+            motion:layout_constraintEnd_toEndOf="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/middle" >
+        <Constraint
+            android:id="@+id/imageFilterView8"
+            motion:layout_constraintEnd_toStartOf="@+id/btnSelanjutnya"
+            motion:layout_constraintStart_toEndOf="@+id/btnLewati"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="80dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/imageFilterView7"
+            motion:layout_constraintStart_toEndOf="@+id/imageFilterView8"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/imageFilterView9"
+            motion:layout_constraintStart_toEndOf="@+id/imageFilterView7"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnLewati"
+            motion:layout_constraintVertical_bias="0.555"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintTop_toTopOf="@+id/btnLewati">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="550dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            android:id="@+id/imageView3"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="550dp" />
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Constraint
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="550dp"
+            motion:layout_constraintEnd_toStartOf="parent" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/middle"
+        motion:constraintSetEnd="@+id/end" >
+        <OnSwipe motion:dragDirection="dragLeft" />
+        <OnClick motion:targetId="@id/btnSelanjutnya"
+            motion:clickAction="transitionToEnd" />
+    </Transition>
+</MotionScene>

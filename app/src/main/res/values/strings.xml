@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ecommerce-frontend</string>
+    <string name="splash_screen">splash screen\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_1"> tab 1</string>
+    <string name="tab_2"> tab 2</string>
+    <string name="selanjutnya">Selanjutnya</string>
+    <string name="lewati">Lewati</string>
+    <string name="gabung_sekarang">Gabung Sekarang</string>
+
+</resources>
