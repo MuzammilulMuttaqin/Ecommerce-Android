@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.zam.ecommerce_frontend.SplashFragment"
@@ -17,5 +17,39 @@
         android:id="@+id/onboardingFragment"
         android:name="com.zam.ecommerce_frontend.OnboardingFragment"
         android:label="fragment_onboarding"
-        tools:layout="@layout/fragment_onboarding" />
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.zam.ecommerce_frontend.presentation.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment2"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.zam.ecommerce_frontend.presentation.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.zam.ecommerce_frontend.presentation.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

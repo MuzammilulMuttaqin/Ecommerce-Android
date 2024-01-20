@@ -21,7 +21,6 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSplashBinding.inflate(inflater)
-        // Inflate the layout for this fragment
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,7 +28,6 @@ class SplashFragment : Fragment() {
         val time = 3000
 
         Handler(Looper.getMainLooper()).postDelayed({
-//            Navigation.createNavigateOnClickListener(R.id.action_splashFragment_to_onboardingFragment)
            findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
         }, time.toLong())
         Animation()
