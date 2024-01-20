@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.zam.ecommerce_frontend.R
-import com.zam.ecommerce_frontend.databinding.FragmentStoreBinding
 import com.zam.ecommerce_frontend.databinding.FragmentTransactionBinding
 
 class TransactionFragment : Fragment() {

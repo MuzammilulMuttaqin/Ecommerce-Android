@@ -27,7 +27,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/textfield_email"
             android:inputType="textEmailAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -44,7 +44,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/textfield_password"
             android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:layout_marginHorizontal="16dp"
-        android:text="Daftar"
+        android:text="@string/tombol_daftar"
         android:layout_marginTop="26dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -75,7 +75,7 @@
             android:textSize="12sp"
             android:layout_marginTop="15dp"
             android:layout_centerInParent="true"
-            android:text="atau masuk dengan" />
+            android:text="@string/atau_masuk_dengan" />
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_marginTop="27dp"
@@ -91,7 +91,7 @@
         android:textSize="14sp"
         style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_marginHorizontal="16dp"
-        android:text="Masuk"
+        android:text="@string/tombol_masuk"
         android:layout_marginTop="0dp"/>
 
     <TextView
@@ -101,7 +101,7 @@
         android:textSize="15sp"
         android:gravity="center"
         android:layout_marginHorizontal="16dp"
-        android:text="Dengan masuk disini, kamu menyetujui Syarat &amp; Ketentuan serta Kebijakan Privasi TokoPhincon."
+        android:text="@string/SnK"
         />
 
 </LinearLayout>

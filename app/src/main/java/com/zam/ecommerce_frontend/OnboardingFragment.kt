@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.zam.ecommerce_frontend.databinding.FragmentOnboardingBinding
-import com.zam.ecommerce_frontend.databinding.FragmentSplashBinding
 
 class OnboardingFragment : Fragment() {
     private var _binding: FragmentOnboardingBinding? = null

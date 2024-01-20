@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="notification"
+    <item android:title="@string/notification"
         app:showAsAction="always"
         android:id="@+id/appbar_notification"
         android:icon="@drawable/ic_notification"/>
-    <item android:title="shopping cart"
+    <item android:title="@string/shopping_cart"
         app:showAsAction="always"
         android:id="@+id/appbar_shopping_cart"
         android:icon="@drawable/ic_cart"/>
-    <item android:title="menu"
+    <item android:title="@string/menu"
         android:id="@+id/appbar_menu"
         app:showAsAction="always"
         android:icon="@drawable/ic_menu"/>

@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.zam.ecommerce_frontend.databinding.FragmentHomeBinding
-import com.zam.ecommerce_frontend.databinding.FragmentLoginBinding
 
 class HomeFragment : Fragment() {
 
