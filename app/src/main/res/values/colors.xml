@@ -8,4 +8,5 @@
     <color name="tab_indicator_default">#CAC4D0</color>
     <color name="tab_indicator_selected">#6750A4</color>
     <color name="primary">#6750A4</color>
+    <color name="lavender">#49454F</color>
 </resources>

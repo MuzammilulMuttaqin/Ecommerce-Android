@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.auth.RegisterFragment"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_height="64dp"
+        android:gravity="center"
+        app:titleCentered="true"
+        app:title="Daftar"
+        android:layout_width="match_parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        app:helperTextEnabled="true"
+        app:helperText="Contoh: test@gmail.com"
+        android:layout_marginHorizontal="16dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/textfield_email"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:helperTextEnabled="true"
+        app:helperText="Minimal 8 karakter"
+        android:layout_marginHorizontal="16dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/textfield_password"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_daftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/tombol_daftar"
+        android:layout_marginTop="26dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_marginTop="27dp"
+            android:layout_width="99dp"
+            android:layout_toStartOf="@+id/atau"
+            android:layout_height="1dp"/>
+        <TextView
+            android:id="@+id/atau"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="15dp"
+            android:layout_centerInParent="true"
+            android:text="@string/atau_masuk_dengan" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_marginTop="27dp"
+            android:layout_toEndOf="@+id/atau"
+            android:layout_width="99dp"
+            android:layout_height="1dp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_masuk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/tombol_masuk"
+        android:layout_marginTop="0dp"/>
+
+    <TextView
+        android:id="@+id/text_persyaratan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/SnK"
+        />
+
+</LinearLayout>

@@ -8,5 +8,31 @@
     <string name="selanjutnya">Selanjutnya</string>
     <string name="lewati">Lewati</string>
     <string name="gabung_sekarang">Gabung Sekarang</string>
+    <string name="notification">notification</string>
+    <string name="shopping_cart">shopping cart</string>
+    <string name="menu">menu</string>
+    <string name="wishlist">wishlist</string>
+    <string name="transaction">transaction</string>
+    <string name="logout">Logout</string>
+    <string name="en">EN</string>
+    <string name="id">ID</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="masuk">Masuk</string>
+    <string name="atau_daftar_dengan">atau daftar dengan</string>
+    <string name="daftar">Daftar</string>
+    <string name="dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"><![CDATA[Dengan masuk disini, kamu menyetujui Syarat & Ketentuan serta Kebijakan Privasi TokoPhincon.]]></string>
+    <string name="textfield_email">Email</string>
+    <string name="textfield_password">Password</string>
+    <string name="tombol_daftar">Daftar</string>
+    <string name="atau_masuk_dengan">atau masuk dengan</string>
+    <string name="tombol_masuk">Masuk</string>
+    <string name="SnK"><![CDATA[Dengan masuk disini, kamu menyetujui Syarat & Ketentuan serta Kebijakan Privasi TokoPhincon.]]></string>
+    <string name="home">home</string>
+    <string name="store">Store</string>
+    <string name="bottom_wishlist">Wishlist</string>
+    <string name="bottom_transaction">Transaction</string>
 
 </resources>
