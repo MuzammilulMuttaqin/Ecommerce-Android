@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import com.zam.ecommerce_frontend.databinding.FragmentStoreBinding
 
 class StoreFragment : Fragment() {
@@ -21,6 +22,15 @@ class StoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.errorView.isVisible = false
+        binding.errorView.setErrorMessage(
+            title = "500",
+            description = "Your requested data is unavailable",
+            btnTitle = "error",
+            action = {
+
+            }
+        )
     }
 
 }

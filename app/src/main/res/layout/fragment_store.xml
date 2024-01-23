@@ -4,7 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.store.StoreFragment">
+    tools:context=".presentation.ui.store.StoreFragment"
+    android:orientation="vertical">
+    
+    <com.zam.ecommerce_frontend.presentation.utils.ErrorView
+        android:id="@+id/error_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search"
@@ -18,5 +25,11 @@
         android:focusable="false"
         android:background="@drawable/lavender_border"
         app:searchIcon="@drawable/ic_search"/>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_store"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
