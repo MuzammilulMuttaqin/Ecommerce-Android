@@ -5,6 +5,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_height="match_parent">
+
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
@@ -15,7 +16,7 @@
         android:id="@+id/tv_error_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/error_view"
+        tools:text="@string/error_view"
         android:textSize="14sp"
         android:fontFamily="@font/poppins_semibold"
         />
@@ -23,18 +24,16 @@
         android:id="@+id/tv_error_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/error_view"
+        tools:text="@string/error_view"
         android:textSize="16sp"
         android:layout_marginTop="4dp"
-        android:fontFamily="@font/poppins"
-        />
+        android:fontFamily="@font/poppins" />
     <Button
         android:id="@+id/btn_retry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/retry"
+        tools:text="@string/retry"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins"
-        />
+        android:fontFamily="@font/poppins" />
 
 </LinearLayout>

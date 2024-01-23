@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/appbar"
         android:layout_height="64dp"
         app:titleCentered="true"
         app:title="MASUK"
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         app:helperTextEnabled="true"
-        app:helperText="Contoh: test@gmail.com"
+        tools:helperText=""
         android:layout_marginHorizontal="16dp"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
@@ -28,7 +29,7 @@
             android:id="@+id/field_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            tools:hint="@string/email"
             android:inputType="textEmailAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -39,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:helperTextEnabled="true"
-        app:helperText="Minimal 8 karakter"
+        tools:helperText="Minimal 8 karakter"
         android:layout_marginHorizontal="16dp"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
@@ -47,7 +48,7 @@
             android:id="@+id/field_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            tools:hint="@string/password"
             android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -58,7 +59,7 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:layout_marginHorizontal="16dp"
-        android:text="@string/masuk"
+        tools:text="@string/masuk"
         android:layout_marginTop="26dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -71,14 +72,14 @@
             android:layout_toStartOf="@+id/atau"
             android:layout_height="1dp"/>
         <TextView
-            android:id="@+id/atau"
+            android:id="@+id/tv_atau"
             android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:layout_marginTop="15dp"
             android:layout_centerInParent="true"
-            android:text="@string/atau_daftar_dengan" />
+            tools:text="@string/atau_daftar_dengan" />
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_marginTop="27dp"
@@ -94,17 +95,17 @@
         android:textSize="14sp"
         style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_marginHorizontal="16dp"
-        android:text="@string/daftar"
+        tools:text="@string/daftar"
         android:layout_marginTop="0dp"/>
 
     <TextView
-        android:id="@+id/text_persyaratan"
+        android:id="@+id/tv_persyaratan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:gravity="center"
         android:layout_marginHorizontal="16dp"
-        android:text="@string/dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"
+        tools:text="@string/dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"
         />
 
 </LinearLayout>

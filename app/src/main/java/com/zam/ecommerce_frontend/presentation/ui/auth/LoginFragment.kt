@@ -18,10 +18,11 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding as FragmentLoginBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView()
         binding.fieldEmail.doAfterTextChanged {
             if(it != null){
                 if(!Utils.isEmailValid(it)){
-                    binding.layoutEmail.error = "Email Tidak Valid"
+                    binding.layoutEmail.error = getString(R.string.email_tidak_valid)
                 }else{
                     binding.layoutEmail.isErrorEnabled = false
                 }
@@ -30,7 +31,7 @@ class LoginFragment : Fragment() {
         binding.fieldPassword.doAfterTextChanged {
             if(it != null){
                 if(it.length < 8){
-                    binding.layoutPassword.error = "Password Tidak Valid"
+                    binding.layoutPassword.error = getString(R.string.password_tidak_valid)
                 }else{
                     binding.layoutPassword.isErrorEnabled = false
                 }
@@ -42,6 +43,24 @@ class LoginFragment : Fragment() {
         binding.btnMasuk.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
         }
+    }
+
+    private fun initView(){
+        binding.apply {
+            appbar.title = getString(R.string.appbar_masuk)
+            fieldEmail.hint = getString(R.string.email)
+            fieldPassword.hint = getString(R.string.password)
+            layoutEmail.helperText = getString(R.string.helper_text_email)
+            layoutPassword.helperText = getString(R.string.helper_text_password)
+            btnMasuk.text = getString(R.string.masuk)
+            tvAtau.text = getString(R.string.atau_masuk_dengan)
+            btnDaftar.text = getString(R.string.daftar)
+            tvPersyaratan.text = getString(R.string.SnK)
+
+        }
+
+
+
     }
 
     override fun onCreateView(

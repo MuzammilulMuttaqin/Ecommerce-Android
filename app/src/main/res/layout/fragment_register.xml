@@ -8,43 +8,48 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/appbar"
         android:layout_height="64dp"
         android:gravity="center"
         app:titleCentered="true"
-        app:title="Daftar"
+        tools:title="@string/daftar"
         android:layout_width="match_parent"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         app:helperTextEnabled="true"
-        app:helperText="Contoh: test@gmail.com"
+        tools:helperText="@string/helper_text_email"
         android:layout_marginHorizontal="16dp"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/field_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/textfield_email"
+            tools:hint="@string/textfield_email"
             android:inputType="textEmailAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:helperTextEnabled="true"
-        app:helperText="Minimal 8 karakter"
+        tools:helperText="@string/helper_text_password"
         android:layout_marginHorizontal="16dp"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/field_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/textfield_password"
+            tools:hint="@string/textfield_password"
             android:inputType="textPassword"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,7 +60,7 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:layout_marginHorizontal="16dp"
-        android:text="@string/tombol_daftar"
+        tools:text="@string/tombol_daftar"
         android:layout_marginTop="26dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -68,14 +73,14 @@
             android:layout_toStartOf="@+id/atau"
             android:layout_height="1dp"/>
         <TextView
-            android:id="@+id/atau"
+            android:id="@+id/tv_atau"
             android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:layout_marginTop="15dp"
             android:layout_centerInParent="true"
-            android:text="@string/atau_masuk_dengan" />
+            tools:text="@string/atau_masuk_dengan" />
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_marginTop="27dp"
@@ -91,17 +96,17 @@
         android:textSize="14sp"
         style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_marginHorizontal="16dp"
-        android:text="@string/tombol_masuk"
+        tools:text="@string/tombol_masuk"
         android:layout_marginTop="0dp"/>
 
     <TextView
-        android:id="@+id/text_persyaratan"
+        android:id="@+id/tv_persyaratan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:gravity="center"
         android:layout_marginHorizontal="16dp"
-        android:text="@string/SnK"
+        tools:text="@string/SnK"
         />
 
 </LinearLayout>

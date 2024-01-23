@@ -37,4 +37,10 @@
     <string name="bottom_transaction">Transaction</string>
     <string name="error_view">error</string>
     <string name="retry">Retry</string>
+    <string name="email_tidak_valid">Invalid Email</string>
+    <string name="password_tidak_valid">Invalid Password</string>
+    <string name="appbar_masuk">Masuk</string>
+    <string name="appbar_daftar">Register</string>
+    <string name="helper_text_email">Example: test@gmail.com</string>
+    <string name="helper_text_password">Minimum 8 characters</string>
 </resources>

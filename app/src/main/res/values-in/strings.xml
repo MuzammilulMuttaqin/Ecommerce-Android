@@ -37,4 +37,10 @@
     <string name="bottom_transaction">Transaksi</string>
     <string name="error_view">error</string>
     <string name="retry">Retry</string>
+    <string name="email_tidak_valid">Email Tidak Valid</string>
+    <string name="password_tidak_valid">Kata Sandi Tidak Valid</string>
+    <string name="appbar_masuk">Masuk</string>
+    <string name="appbar_daftar">Daftar</string>
+    <string name="helper_text_email">Contoh: test@gmail.com</string>
+    <string name="helper_text_password">Minimal 8 karakter</string>
 </resources>

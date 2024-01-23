@@ -22,7 +22,7 @@ class StoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.errorView.isVisible = false
+        binding.errorView.isVisible = true
         binding.errorView.setErrorMessage(
             title = "500",
             description = "Your requested data is unavailable",
