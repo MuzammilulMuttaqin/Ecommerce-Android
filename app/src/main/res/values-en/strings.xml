@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ecommerce-frontend</string>
     <string name="splash_screen">splash screen\n</string>
@@ -5,12 +6,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_1"> tab 1</string>
     <string name="tab_2"> tab 2</string>
-    <string name="selanjutnya">Selanjutnya</string>
-    <string name="lewati">Lewati</string>
-    <string name="gabung_sekarang">Gabung Sekarang</string>
+    <string name="selanjutnya">Next</string>
+    <string name="menu">home</string>
+    <string name="lewati">Skip</string>
+    <string name="gabung_sekarang">Join Now</string>
     <string name="notification">notification</string>
-    <string name="shopping_cart">shopping cart</string>
-    <string name="menu">menu</string>
+    <string name="shopping_cart">Shopping Cart</string>
     <string name="wishlist">wishlist</string>
     <string name="transaction">transaction</string>
     <string name="logout">Logout</string>
@@ -20,27 +21,26 @@
     <string name="dark">Dark</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="masuk">Masuk</string>
-    <string name="atau_daftar_dengan">atau daftar dengan</string>
-    <string name="daftar">Daftar</string>
+    <string name="masuk">Login</string>
+    <string name="atau_daftar_dengan">or register with</string>
+    <string name="daftar">Register</string>
     <string name="dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"><![CDATA[Dengan masuk disini, kamu menyetujui Syarat & Ketentuan serta Kebijakan Privasi TokoPhincon.]]></string>
     <string name="textfield_email">Email</string>
     <string name="textfield_password">Password</string>
-    <string name="tombol_daftar">Daftar</string>
-    <string name="atau_masuk_dengan">atau masuk dengan</string>
-    <string name="tombol_masuk">Masuk</string>
-    <string name="SnK"><![CDATA[Dengan masuk disini, kamu menyetujui Syarat & Ketentuan serta Kebijakan Privasi TokoPhincon.]]></string>
+    <string name="tombol_daftar">Register</string>
+    <string name="atau_masuk_dengan">or enter with</string>
+    <string name="tombol_masuk">Login</string>
+    <string name="SnK">By entering here, you agree to TokoPhincon\'s Terms &amp; Conditions and Privacy Policy</string>
     <string name="home">Home</string>
     <string name="store">Store</string>
     <string name="bottom_wishlist">Wishlist</string>
     <string name="bottom_transaction">Transaction</string>
     <string name="error_view">error</string>
     <string name="retry">Retry</string>
-    <string name="email_tidak_valid">Email Tidak Valid</string>
-    <string name="password_tidak_valid">Password Tidak Valid</string>
+    <string name="email_tidak_valid">Invalid Email</string>
+    <string name="password_tidak_valid">Invalid Password</string>
     <string name="appbar_masuk">Masuk</string>
-    <string name="appbar_daftar">Daftar</string>
-    <string name="helper_text_email">Contoh: test@gmail.com</string>
-    <string name="helper_text_password">Minimal 8 karakter</string>
-
+    <string name="appbar_daftar">Register</string>
+    <string name="helper_text_email">Example: test@gmail.com</string>
+    <string name="helper_text_password">Minimum 8 characters</string>
 </resources>
