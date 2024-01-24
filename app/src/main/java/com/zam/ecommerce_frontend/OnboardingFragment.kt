@@ -30,5 +30,18 @@ class OnboardingFragment : Fragment() {
             view.findNavController().navigate(R.id.action_onboardingFragment_to_registerFragment)
         }
     }
+    private fun initView(){
+        binding.apply {
+            button.text = getString(R.string.gabung_sekarang)
+            btnLewati.text = getString(R.string.lewati)
+            btnSelanjutnya.text = getString(R.string.selanjutnya)
+            imageView2.setImageResource(R.drawable.onboarding2)
+            imageView3.setImageResource(R.drawable.onboarding3)
+            imageFilterView8.setImageResource(R.drawable.intro_default)
+            imageFilterView7.setImageResource(R.drawable.intro_default)
+            imageFilterView9.setImageResource(R.drawable.intro_default)
+
+        }
+    }
 
 }

@@ -50,4 +50,7 @@
     <string name="image_onboarding_3">Image Onboarding 3</string>
     <string name="icon_account">icon account</string>
     <string name="icon_bintang">icon bintang</string>
+    <string name="kamera">Kamera</string>
+    <string name="galeri">Galeri</string>
+    <string name="pilih_gambar">Pilih Gambar</string>
 </resources>

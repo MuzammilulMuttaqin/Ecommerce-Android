@@ -63,10 +63,10 @@ class ProfileFragment : Fragment() {
             tvPersyaratan.text = getString(R.string.SnK)
     }
     private fun showImagePickerDialog() {
-        val options = arrayOf("Kamera", "Galeri")
+        val options = arrayOf(getString(R.string.kamera), getString(R.string.galeri))
 
         val builder = AlertDialog.Builder(context)
-        builder.setTitle("Pilih Gambar")
+        builder.setTitle(getString(R.string.pilih_gambar))
 
         builder.setItems(options) { _, which ->
             when (which) {
