@@ -36,31 +36,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:text="Lenovo Legion 7 16 I7 11800 16GB 1TB SSD RTX3070 8GB Windows 11 QHD IPS"
+                tools:text="Lenovo Legion 7 16 I7 11800 16GB 1TB SSD RTX3070 8GB Windows 11 QHD IPS"
                 android:textSize="12sp"/>
             <TextView
                 android:id="@+id/harga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Rp23.499.000"
+                tools:text="Rp23.499.000"
                 android:textSize="14sp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
                 <ImageView
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_marginVertical="2dp"
-                    android:src="@drawable/ic_account"/>
+                    android:src="@drawable/ic_account"
+                    android:contentDescription="@string/icon_account" />
                 <TextView
                     android:id="@+id/toko"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="ProStoreComputer"
-                    android:textSize="10sp"/>
+                    tools:text="ProStoreComputer"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
             </LinearLayout>
 
             <LinearLayout
@@ -71,25 +74,27 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_marginVertical="2dp"
-                    android:src="@drawable/ic_star"/>
+                    android:src="@drawable/ic_star"
+                    android:contentDescription="@string/icon_bintang" />
                 <TextView
                     android:id="@+id/rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="5.0 |"
-                    android:textSize="10sp"/>
+                    tools:text="5.0 |"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
                 <TextView
                     android:id="@+id/terjual"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text=" Terjual 10"
-                    android:textSize="10sp"/>
+                    tools:text=" Terjual 10"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
             </LinearLayout>
 
         </LinearLayout>
-
 
     </LinearLayout>
 
