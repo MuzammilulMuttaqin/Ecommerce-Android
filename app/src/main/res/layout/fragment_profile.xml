@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.ProfileFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/appbar_profile"
+        android:layout_height="64dp"
+        app:titleCentered="true"
+        app:title="Profile"
+        android:layout_width="match_parent"/>
+    
+    <View
+        android:id="@+id/v_profile"
+        android:layout_below="@id/appbar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_border"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_profile_image"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:cropToPadding="true"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/v_profile"
+        android:layout_centerInParent="true"
+        android:scaleType="centerInside"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        tools:src="@drawable/ic_person" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_profile_image"
+        android:layout_marginTop="24dp"
+        app:helperTextEnabled="true"
+        android:layout_marginHorizontal="16dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/field_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:hint="@string/john_doe"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_selesai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_name"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="16dp"
+        tools:text="@string/selesai"
+        android:layout_marginTop="24dp"/>
+    <TextView
+        android:id="@+id/tv_persyaratan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/btn_selesai"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginHorizontal="16dp"
+        tools:text="@string/dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"
+        />
+
+</RelativeLayout>

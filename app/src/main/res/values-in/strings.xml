@@ -11,6 +11,7 @@
     <string name="lewati">Lewati</string>
     <string name="gabung_sekarang">Gabung Sekarang</string>
     <string name="notification">notifikasi</string>
+    <string name="account">akun</string>
     <string name="shopping_cart">Keranjang</string>
     <string name="wishlist">wishlist</string>
     <string name="transaction">transaksi</string>
@@ -43,4 +44,10 @@
     <string name="appbar_daftar">Daftar</string>
     <string name="helper_text_email">Contoh: test@gmail.com</string>
     <string name="helper_text_password">Minimal 8 karakter</string>
+    <string name="john_doe">John doe</string>
+    <string name="selesai">Selesai</string>
+    <string name="image_onboarding_2">Image Onboarding 2</string>
+    <string name="image_onboarding_3">Image Onboarding 3</string>
+    <string name="icon_account">icon account</string>
+    <string name="icon_bintang">icon bintang</string>
 </resources>

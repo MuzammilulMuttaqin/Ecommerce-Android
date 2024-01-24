@@ -92,7 +92,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/onboarding2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="222dp" />
+        tools:layout_editor_absoluteX="222dp"
+        android:contentDescription="@string/image_onboarding_2" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -101,7 +102,8 @@
         android:layout_marginTop="384dp"
         android:src="@drawable/onboarding3"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="24dp" />
+        tools:layout_editor_absoluteX="24dp"
+        android:contentDescription="@string/image_onboarding_3" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

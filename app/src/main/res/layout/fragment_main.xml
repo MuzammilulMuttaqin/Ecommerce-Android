@@ -21,9 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/appbar_menu"
+            android:clickable="true"
             app:titleTextColor="?attr/colorControlNormal"
             app:logo="@drawable/ic_account"
-            app:title="John Doe" />
+            app:title="John Doe"
+            android:focusable="true" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.divider.MaterialDivider

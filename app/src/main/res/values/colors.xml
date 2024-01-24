@@ -9,4 +9,5 @@
     <color name="tab_indicator_selected">#6750A4</color>
     <color name="primary">#6750A4</color>
     <color name="lavender">#49454F</color>
+    <color name="grey_border">#CAC4D0</color>
 </resources>

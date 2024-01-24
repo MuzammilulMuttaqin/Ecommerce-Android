@@ -52,7 +52,7 @@
         android:layout_gravity="center"/>
 
         <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/sw_language"
+            android:id="@+id/switch_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="sw_language"
@@ -96,7 +96,7 @@
         android:layout_gravity="center"/>
 
         <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/sw_darkmode"
+            android:id="@+id/switch_darkmode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
