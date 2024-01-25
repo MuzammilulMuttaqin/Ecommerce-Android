@@ -24,13 +24,12 @@
     <string name="masuk">Masuk</string>
     <string name="atau_daftar_dengan">atau daftar dengan</string>
     <string name="daftar">Daftar</string>
-    <string name="dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"><![CDATA[Dengan masuk disini, kamu menyetujui Syarat & Ketentuan serta Kebijakan Privasi TokoPhincon.]]></string>
     <string name="textfield_email">Email</string>
     <string name="textfield_password">Password</string>
     <string name="tombol_daftar">Daftar</string>
     <string name="atau_masuk_dengan">atau masuk dengan</string>
     <string name="tombol_masuk">Masuk</string>
-    <string name="SnK"><![CDATA[Dengan masuk disini, kamu menyetujui Syarat & Ketentuan serta Kebijakan Privasi TokoPhincon.]]></string>
+    <string name="SnK">Dengan masuk disini, kamu menyetujui Syarat &amp; Ketentuan\n serta Kebijakan Privasi TokoPhincon></string>
     <string name="home">Home</string>
     <string name="store">Store</string>
     <string name="bottom_wishlist">Wishlist</string>
@@ -52,5 +51,9 @@
     <string name="kamera">Kamera</string>
     <string name="galeri">Galeri</string>
     <string name="pilih_gambar">Pilih Gambar</string>
+    <string name="gambar_disimpan_ke_galeri">Gambar disimpan ke galeri</string>
+    <string name="gambar_disimpan">Gambar disimpan %1$s</string>
+    <string name="gambar_gagal_disimpan">Gambar gagal disimpan</string>
+    <string name="imagesaver">ImageSaver</string>
 
 </resources>

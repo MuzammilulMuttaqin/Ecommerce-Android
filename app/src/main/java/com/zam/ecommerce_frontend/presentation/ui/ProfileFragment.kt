@@ -1,9 +1,11 @@
 package com.zam.ecommerce_frontend.presentation.ui
 
-import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.media.ThumbnailUtils
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.fragment.app.Fragment
@@ -12,35 +14,33 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.navigation.fragment.findNavController
+import android.Manifest
+import android.content.ContentResolver
+import android.net.Uri
+import androidx.activity.result.contract.ActivityResultContracts
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentProfileBinding
+import com.zam.ecommerce_frontend.presentation.utils.ImageSaver
+import com.zam.ecommerce_frontend.presentation.utils.Utils
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.File
 
+@Suppress("DEPRECATION")
 class ProfileFragment : Fragment() {
-    private var _binding : FragmentProfileBinding? = null
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding as FragmentProfileBinding
-    private val takePictureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val imageBitmap = result.data?.extras?.get("data") as? Bitmap
-                binding.ivProfileImage.setImageBitmap(imageBitmap)
-                binding.ivProfileImage.scaleType = ImageView.ScaleType.CENTER_CROP
-
-            }
-        }
-
-    private val pickFromGalleryLauncher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val imageUri = result.data?.data
-                binding.ivProfileImage.setImageURI(imageUri)
-                binding.ivProfileImage.scaleType = ImageView.ScaleType.CENTER_CROP
-            }
-        }
+    private var imageFile : File? = null
+    private var imageMultiPart: MultipartBody.Part? = null
+    private var imageUri: Uri? = Uri.EMPTY
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater)
         return binding.root
@@ -56,12 +56,18 @@ class ProfileFragment : Fragment() {
             findNavController().navigate(R.id.action_profileFragment_to_mainFragment)
         }
     }
-    private fun initView() = with(binding){
+
+    private fun initView() {
+        binding.apply {
             ivProfileImage.setImageResource(R.drawable.ic_person)
             fieldName.hint = getString(R.string.selesai)
             btnSelesai.text = getString(R.string.selesai)
-            tvPersyaratan.text = getString(R.string.SnK)
+            tvPersyaratan.text = Utils.customTextColor(
+                requireActivity(), getString(R.string.SnK)
+            )
+        }
     }
+
     private fun showImagePickerDialog() {
         val options = arrayOf(getString(R.string.kamera), getString(R.string.galeri))
 
@@ -74,19 +80,59 @@ class ProfileFragment : Fragment() {
                 1 -> pickImageFromGallery()
             }
         }
-
         builder.show()
     }
+
     private fun takePictureFromCamera() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        takePictureLauncher.launch(intent)
+        if (checkSelfPermission(
+                requireActivity(),
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(cameraIntent, 1)
+        } else {
+            requestPermissions(arrayOf(Manifest.permission.CAMERA), 100)
+        }
+    }
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            var image = data!!.extras!!["data"] as Bitmap?
+            val dimension = image!!.width.coerceAtMost(image.height)
+            image = ThumbnailUtils.extractThumbnail(image, dimension, dimension)
+            val imageSaver = ImageSaver(requireActivity())
+            imageSaver.saveBitmapToGallery(image)
+            with(binding) {
+                ivProfileImage.setImageBitmap(image)
+                ivProfileImage.scaleType = ImageView.ScaleType.CENTER_CROP
+            }
+            Toast.makeText(requireActivity(), "camera $image", Toast.LENGTH_SHORT).show()
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
-    private fun pickImageFromGallery() {
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        pickFromGalleryLauncher.launch(intent)
+    private fun pickImageFromGallery(){
+        galleryLauncher.launch("image/*")
     }
-    private fun showToast(message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-    }
+    private val galleryLauncher =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            uri?.let {
+                val contentResolver: ContentResolver = requireActivity()!!.contentResolver
+                val type = contentResolver.getType(it)
+                imageUri = it
+                val fileNameImg = "${System.currentTimeMillis()}.png"
+                binding.ivProfileImage.setImageURI(it)
+                binding.ivProfileImage.scaleType = ImageView.ScaleType.CENTER_CROP
+                val tempFile = File.createTempFile("ecommerce-", fileNameImg, null)
+                imageFile = tempFile
+                val inputStream = contentResolver.openInputStream(uri)
+                tempFile.outputStream().use    { result ->
+                    inputStream?.copyTo(result)
+                }
+                val requestBody: RequestBody = tempFile.asRequestBody(type?.toMediaType())
+                imageMultiPart = MultipartBody.Part.createFormData("image", tempFile.name, requestBody)
+            }
+        }
+
 }

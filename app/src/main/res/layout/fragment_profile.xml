@@ -72,7 +72,6 @@
         android:textSize="15sp"
         android:gravity="center"
         android:layout_marginHorizontal="16dp"
-        tools:text="@string/dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"
-        />
+        tools:text="@string/SnK" />
 
 </RelativeLayout>

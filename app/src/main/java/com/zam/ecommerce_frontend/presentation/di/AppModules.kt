@@ -7,9 +7,12 @@ import com.zam.ecommerce_frontend.presentation.utils.PreferenceDataStoreHelper
 import com.zam.ecommerce_frontend.presentation.utils.PreferenceDataStoreHelperImpl
 import org.koin.android.ext.koin.androidContext
 import com.zam.ecommerce_frontend.presentation.ui.home.HomeViewModel
+import com.zam.ecommerce_frontend.presentation.ui.onboarding.OnboardingViewModel
+
 import org.koin.dsl.module
 import org.koin.core.module.Module
 import org.koin.androidx.viewmodel.dsl.viewModelOf
+
 
 object AppModules {
 
@@ -22,6 +25,7 @@ object AppModules {
     }
     private val viewModelModule = module {
         viewModelOf(::HomeViewModel)
+        viewModelOf(::OnboardingViewModel)
     }
     val modules: List<Module> = listOf(
         local,

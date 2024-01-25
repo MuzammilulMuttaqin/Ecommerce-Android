@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentWishlistBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,5 +33,6 @@ class WishlistFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.textView.text = getString(R.string.hello_blank_fragment)
     }
 }
