@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentRegisterBinding
+import com.zam.ecommerce_frontend.presentation.utils.Utils
 
 class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
@@ -37,8 +38,8 @@ class RegisterFragment : Fragment() {
             btnDaftar.text = getString(R.string.daftar)
             tvAtau.text = getString(R.string.atau_masuk_dengan)
             btnMasuk.text = getString(R.string.masuk)
-            tvPersyaratan.text = getString(R.string.SnK)
-
+            tvPersyaratan.text = Utils.customTextColor(
+                requireActivity(), getString(R.string.SnK))
 
         }
     }

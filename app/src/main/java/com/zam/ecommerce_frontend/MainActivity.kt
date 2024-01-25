@@ -3,11 +3,9 @@ package com.zam.ecommerce_frontend
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import com.zam.ecommerce_frontend.databinding.ActivityMainBinding
 import com.zam.ecommerce_frontend.presentation.ui.home.HomeViewModel
+import com.zam.ecommerce_frontend.presentation.utils.Localization
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setDarkMode()
+        setUpLocalization()
     }
     private fun setDarkMode(){
         viewModel.appThemeLiveData.observe(this){ isActive ->
@@ -30,7 +29,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
-
+    private fun setUpLocalization() {
+        viewModel.appLocaleLiveData.observe(this){ isActive ->
+            when(isActive){
+                true -> Localization.setLocale(this, idn)
+                else -> Localization.setLocale(this, en)
+            }
+        }
+    }
+    companion object {
+        val idn = "in"
+        val en = "en"
+    }
 }

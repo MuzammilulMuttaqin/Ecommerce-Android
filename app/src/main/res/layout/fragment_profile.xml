@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.ProfileFragment">
+    tools:context=".presentation.ui.appbar.ProfileFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/appbar_profile"
@@ -72,7 +72,6 @@
         android:textSize="15sp"
         android:gravity="center"
         android:layout_marginHorizontal="16dp"
-        tools:text="@string/dengan_masuk_disini_kamu_menyetujui_syarat_amp_ketentuan_serta_kebijakan_privasi_tokophincon"
-        />
+        tools:text="@string/SnK" />
 
 </RelativeLayout>

@@ -55,12 +55,9 @@ class LoginFragment : Fragment() {
             btnMasuk.text = getString(R.string.masuk)
             tvAtau.text = getString(R.string.atau_masuk_dengan)
             btnDaftar.text = getString(R.string.daftar)
-            tvPersyaratan.text = getString(R.string.SnK)
-
+            tvPersyaratan.text = Utils.customTextColor(
+                requireActivity(), getString(R.string.SnK))
         }
-
-
-
     }
 
     override fun onCreateView(

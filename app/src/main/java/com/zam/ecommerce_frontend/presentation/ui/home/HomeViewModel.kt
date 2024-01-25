@@ -9,9 +9,16 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(private val userPreferenceDataSource: UserPreferenceDataSource): ViewModel(){
     val appThemeLiveData = userPreferenceDataSource.getStateDarkMode().asLiveData(Dispatchers.IO)
+    var appLocaleLiveData = userPreferenceDataSource.getStateLocale().asLiveData(Dispatchers.IO)
+
     fun setThemeDarkMode(isActive : Boolean){
         viewModelScope.launch {
             userPreferenceDataSource.saveStateDarkMode(isActive)
+        }
+    }
+    fun setLocale(isActive : Boolean){
+        viewModelScope.launch {
+            userPreferenceDataSource.saveStateLocale(isActive)
         }
     }
 }
