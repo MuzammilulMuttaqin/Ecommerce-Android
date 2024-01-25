@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.zam.ecommerce_frontend.presentation.ui.ProfileFragment"
+        android:name="com.zam.ecommerce_frontend.presentation.ui.appbar.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.zam.ecommerce_frontend.databinding.FragmentStoreBinding
 
 class StoreFragment : Fragment() {
@@ -32,10 +31,5 @@ class StoreFragment : Fragment() {
             }
         )
     }
-
-//    fun showBottomSheet(view: View){
-//        val dialog = context?.let { BottomSheetDialog(it) }
-//        val view = layoutInflater
-//    }
 
 }

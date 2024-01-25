@@ -1,4 +1,4 @@
-package com.zam.ecommerce_frontend.presentation.ui
+package com.zam.ecommerce_frontend.presentation.ui.appbar
 
 import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
@@ -22,6 +22,7 @@ import android.net.Uri
 import androidx.activity.result.contract.ActivityResultContracts
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentProfileBinding
+import com.zam.ecommerce_frontend.presentation.utils.Constant
 import com.zam.ecommerce_frontend.presentation.utils.ImageSaver
 import com.zam.ecommerce_frontend.presentation.utils.Utils
 import okhttp3.MediaType.Companion.toMediaType
@@ -124,14 +125,14 @@ class ProfileFragment : Fragment() {
                 val fileNameImg = "${System.currentTimeMillis()}.png"
                 binding.ivProfileImage.setImageURI(it)
                 binding.ivProfileImage.scaleType = ImageView.ScaleType.CENTER_CROP
-                val tempFile = File.createTempFile("ecommerce-", fileNameImg, null)
+                val tempFile = File.createTempFile(Constant.tempFile, fileNameImg, null)
                 imageFile = tempFile
                 val inputStream = contentResolver.openInputStream(uri)
-                tempFile.outputStream().use    { result ->
+                tempFile.outputStream().use { result ->
                     inputStream?.copyTo(result)
                 }
                 val requestBody: RequestBody = tempFile.asRequestBody(type?.toMediaType())
-                imageMultiPart = MultipartBody.Part.createFormData("image", tempFile.name, requestBody)
+                imageMultiPart = MultipartBody.Part.createFormData(Constant.multipartImage, tempFile.name, requestBody)
             }
         }
 

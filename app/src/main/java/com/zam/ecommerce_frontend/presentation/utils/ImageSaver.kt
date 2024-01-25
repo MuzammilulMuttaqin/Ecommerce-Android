@@ -18,7 +18,7 @@ class ImageSaver(private val context: Context) {
         val fileName = generateFileName()
         val contentValues = ContentValues().apply {
             put(MediaStore.Images.Media.DISPLAY_NAME, fileName)
-            put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+            put(MediaStore.Images.Media.MIME_TYPE, Constant.image)
             put(MediaStore.Images.Media.WIDTH, bitmap.width)
             put(MediaStore.Images.Media.HEIGHT, bitmap.height)
         }
@@ -52,7 +52,7 @@ class ImageSaver(private val context: Context) {
     }
 
     private fun generateFileName(): String {
-        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+        val timeStamp = SimpleDateFormat(Constant.simpleDateFormat, Locale.getDefault()).format(Date())
         return "IMG_$timeStamp.jpg"
     }
 }

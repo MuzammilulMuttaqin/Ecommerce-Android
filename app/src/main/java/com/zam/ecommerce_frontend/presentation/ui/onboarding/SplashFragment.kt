@@ -17,7 +17,7 @@ class SplashFragment : Fragment() {
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding as FragmentSplashBinding
     private val viewModel : OnboardingViewModel by viewModel()
-    val rotate = View.ROTATION
+    private val rotate = View.ROTATION
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,7 +28,6 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val time = 2000
-//        navigateController()
         Handler(Looper.getMainLooper()).postDelayed({
            findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
         }, time.toLong())
@@ -52,13 +51,5 @@ class SplashFragment : Fragment() {
             duration = 2000
         }.start()
     }
-//    private fun navigateController(){
-//        viewModel.appOnboardingLiveData.observe(viewLifecycleOwner){ isActive ->
-//            when(isActive){
-//                true -> findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-//                else -> findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
-//            }
-//        }
-//    }
 
 }
