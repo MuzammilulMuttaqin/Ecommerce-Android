@@ -7,4 +7,5 @@ object Constant {
     const val multipartImage = "image"
     const val image = "image/jpeg"
     const val simpleDateFormat = "SimpleDateFormat"
+    const val ERBE_API = "http://192.168.43.27:5000"
 }

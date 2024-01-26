@@ -10,4 +10,14 @@
     <color name="primary">#6750A4</color>
     <color name="lavender">#49454F</color>
     <color name="grey_border">#CAC4D0</color>
+
+    <color name="primary_text_color">#2f333c</color>
+    <color name="success">#47d764</color>
+    <color name="warning">#ffc021</color>
+    <color name="error">#EF5954</color>
+    <color name="info">#2f86eb</color>
+
+    <color name="green100">#17C749</color>
+    <color name="green200">#00B138</color>
+    <color name="green300">#109E38</color>
 </resources>
