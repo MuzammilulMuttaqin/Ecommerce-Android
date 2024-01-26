@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentLoginBinding
+import com.zam.ecommerce_frontend.presentation.ui.component.SnackBar
 import com.zam.ecommerce_frontend.presentation.utils.Utils
 
 class LoginFragment : Fragment() {
@@ -19,6 +20,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+
         binding.fieldEmail.doAfterTextChanged {
             if(it != null){
                 if(!Utils.isEmailValid(it)){
@@ -40,9 +42,19 @@ class LoginFragment : Fragment() {
         binding.btnDaftar.setOnClickListener {
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment2)
         }
+
         binding.btnMasuk.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+            SnackBar.createSnackbar(
+                requireContext(),
+                binding.root,
+                getString(R.string.selesai)
+            )
+            {
+                findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+            }
         }
+
+
     }
 
     private fun initView(){
