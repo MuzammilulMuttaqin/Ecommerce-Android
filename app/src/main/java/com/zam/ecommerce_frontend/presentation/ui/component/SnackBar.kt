@@ -16,13 +16,6 @@ import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.LayoutSuccessBinding
 
 object SnackBar {
-//    companion object {
-//        private const val SUCCESS = 200
-//        private const val INFO = 300
-//        private const val WARNING = 400
-//        private const val ERROR = 500
-//        private const val NETWORKERROR = 600
-//      }
 
     @SuppressLint("RestrictedApi")
         fun createSnackbar(

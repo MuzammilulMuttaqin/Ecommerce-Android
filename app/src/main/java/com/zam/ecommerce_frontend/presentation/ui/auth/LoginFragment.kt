@@ -47,7 +47,7 @@ class LoginFragment : Fragment() {
             SnackBar.createSnackbar(
                 requireContext(),
                 binding.root,
-                "selesai"
+                getString(R.string.selesai)
             )
             {
                 findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
