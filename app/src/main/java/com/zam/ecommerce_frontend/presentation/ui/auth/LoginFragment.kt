@@ -18,7 +18,6 @@ import com.zam.ecommerce_frontend.presentation.ui.component.SnackBar
 import com.zam.ecommerce_frontend.presentation.utils.Constant.linkTvPersyaratan
 import com.zam.ecommerce_frontend.presentation.utils.Utils
 import com.zam.ecommerce_frontend.presentation.utils.Utils.customTextColor
-import okhttp3.internal.wait
 
 class LoginFragment : Fragment() {
 

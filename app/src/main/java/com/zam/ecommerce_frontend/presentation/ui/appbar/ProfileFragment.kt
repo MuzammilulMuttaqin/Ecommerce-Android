@@ -25,10 +25,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentProfileBinding
-import com.zam.ecommerce_frontend.presentation.ui.auth.LoginFragment
 import com.zam.ecommerce_frontend.presentation.utils.Constant
 import com.zam.ecommerce_frontend.presentation.utils.ImageSaver
-import com.zam.ecommerce_frontend.presentation.utils.Utils
 import com.zam.ecommerce_frontend.presentation.utils.Utils.customTextColor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -61,8 +59,6 @@ class ProfileFragment : Fragment() {
         binding.btnSelesai.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_mainFragment)
         }
-        val login = LoginFragment()
-        setTvPersyaratan()
 
     }
 
@@ -156,7 +152,7 @@ class ProfileFragment : Fragment() {
     private val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             uri?.let {
-                val contentResolver: ContentResolver = requireActivity()!!.contentResolver
+                val contentResolver: ContentResolver = requireActivity().contentResolver
                 val type = contentResolver.getType(it)
                 imageUri = it
                 val fileNameImg = "${System.currentTimeMillis()}.png"

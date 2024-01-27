@@ -1,12 +1,10 @@
 package com.zam.ecommerce_frontend.presentation.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.zam.ecommerce_frontend.MainActivity
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel

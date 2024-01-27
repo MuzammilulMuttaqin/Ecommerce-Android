@@ -2,8 +2,6 @@ package com.zam.ecommerce_frontend.presentation.ui.onboarding
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View

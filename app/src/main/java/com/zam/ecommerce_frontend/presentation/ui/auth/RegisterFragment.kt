@@ -13,7 +13,6 @@ import androidx.navigation.findNavController
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentRegisterBinding
 import com.zam.ecommerce_frontend.presentation.utils.Constant
-import com.zam.ecommerce_frontend.presentation.utils.Utils
 import com.zam.ecommerce_frontend.presentation.utils.Utils.customTextColor
 
 class RegisterFragment : Fragment() {
