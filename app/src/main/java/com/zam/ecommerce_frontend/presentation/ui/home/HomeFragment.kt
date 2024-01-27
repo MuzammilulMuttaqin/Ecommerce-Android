@@ -13,14 +13,13 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding as FragmentHomeBinding
+    private lateinit var binding: FragmentHomeBinding
     private val viewModel : HomeViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater)
+        binding = FragmentHomeBinding.inflate(inflater)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,10 +43,6 @@ class HomeFragment : Fragment() {
         binding.switchLanguage.setOnCheckedChangeListener { _, isChecked ->
             viewModel.setLocale(isChecked)
         }
-        binding.switchLanguage.setOnClickListener {
-            startActivity(Intent(context, MainActivity::class.java))
-        }
-
 
     }
 }

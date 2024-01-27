@@ -57,6 +57,7 @@ dependencies {
     implementation("androidx.camera:camera-core:1.3.1")
     implementation("androidx.camera:camera-view:1.3.1")
     implementation("androidx.camera:camera-lifecycle:1.3.1")
+    implementation("androidx.constraintlayout:constraintlayout-core:1.0.4")
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.2")

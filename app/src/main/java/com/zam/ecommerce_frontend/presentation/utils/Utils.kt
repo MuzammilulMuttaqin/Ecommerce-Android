@@ -1,11 +1,10 @@
 package com.zam.ecommerce_frontend.presentation.utils
 
-import android.content.Context
 import android.text.Editable
 import android.text.SpannableString
+import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
-import androidx.core.content.ContextCompat
-import com.zam.ecommerce_frontend.R
+import android.view.View
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -16,26 +15,57 @@ object Utils {
         val matcher: Matcher = pattern.matcher(email)
         return matcher.matches()
     }
-    fun customTextColor(context : Context, fullText : String): SpannableString {
-        val spannableString = SpannableString(fullText)
+    fun String.customTextColor(
+        locale: String,
+        color: Int,
+        actionInc: () -> Unit,
+        actionPolicy : () -> Unit): SpannableString {
+        val spannableString = SpannableString(this)
 
-        val validateFirstText = fullText.indexOf("Syarat & Ketentuan")
-        val initFirstText = validateFirstText + "Syarat & Ketentuan".length
+        val tncText = if (locale =="in") "Syarat & Ketentuan" else "Terms & Conditions"
+        val policyText = if (locale == "in") "Kebijakan Privasi" else "Privacy Policy"
 
-        val validateSechondText = fullText.indexOf("Kebijakan Privasi")
-        val initSechondText = validateSechondText + "Kebijakan Privasi".length
+        val startTnc = this.indexOf(tncText)
+        val endTnc = startTnc + tncText.length
 
-        val customPurpleColor = ContextCompat.getColor(context, R.color.primary)
+        val startPolicy = this.indexOf(policyText)
+        val endPolicy = startPolicy + policyText.length
+
+        val tncClickableSpan = object : ClickableSpan(){
+            override fun onClick(widget: View) {
+                actionInc.invoke()
+            }
+        }
+
+        val policyClickableSpan = object :  ClickableSpan(){
+            override fun onClick(widget: View) {
+                actionPolicy.invoke()
+            }
+        }
+
         spannableString.setSpan(
-            ForegroundColorSpan(customPurpleColor),
-            validateFirstText,
-            initFirstText,
+            ForegroundColorSpan(color),
+            startPolicy,
+            endPolicy,
             0
         )
         spannableString.setSpan(
-            ForegroundColorSpan(customPurpleColor),
-            validateSechondText,
-            initSechondText,
+            ForegroundColorSpan(color),
+            startTnc,
+            endTnc,
+            0
+        )
+
+        spannableString.setSpan(
+            tncClickableSpan,
+            startTnc,
+            endTnc,
+            0
+        )
+        spannableString.setSpan(
+            policyClickableSpan,
+            startPolicy,
+            endPolicy,
             0
         )
 

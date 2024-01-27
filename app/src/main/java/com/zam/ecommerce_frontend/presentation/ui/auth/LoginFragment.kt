@@ -1,9 +1,13 @@
 package com.zam.ecommerce_frontend.presentation.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -11,7 +15,10 @@ import androidx.navigation.fragment.findNavController
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentLoginBinding
 import com.zam.ecommerce_frontend.presentation.ui.component.SnackBar
+import com.zam.ecommerce_frontend.presentation.utils.Constant.linkTvPersyaratan
 import com.zam.ecommerce_frontend.presentation.utils.Utils
+import com.zam.ecommerce_frontend.presentation.utils.Utils.customTextColor
+import okhttp3.internal.wait
 
 class LoginFragment : Fragment() {
 
@@ -20,7 +27,6 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-
         binding.fieldEmail.doAfterTextChanged {
             if(it != null){
                 if(!Utils.isEmailValid(it)){
@@ -43,8 +49,9 @@ class LoginFragment : Fragment() {
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment2)
         }
 
+        setTvPersyaratan()
         binding.btnMasuk.setOnClickListener {
-            SnackBar.createSnackbar(
+            SnackBar.createSnackBar(
                 requireContext(),
                 binding.root,
                 getString(R.string.selesai)
@@ -67,9 +74,38 @@ class LoginFragment : Fragment() {
             btnMasuk.text = getString(R.string.masuk)
             tvAtau.text = getString(R.string.atau_masuk_dengan)
             btnDaftar.text = getString(R.string.daftar)
-            tvPersyaratan.text = Utils.customTextColor(
-                requireActivity(), getString(R.string.SnK))
         }
+    }
+
+    private fun setTvPersyaratan(){
+        with(binding) {
+
+        }
+        with(binding){
+            tvPersyaratan.movementMethod = LinkMovementMethod.getInstance()
+            val color = context?.let { ContextCompat.getColor(it, R.color.primary) }
+
+            val actionInc : () -> Unit = {
+                Intent(Intent.ACTION_VIEW, linkTvPersyaratan.toUri()).run {
+                    context?.startActivity(this)
+                }
+            }
+            val actionPolicy : () -> Unit = {
+                Intent(Intent.ACTION_VIEW,linkTvPersyaratan.toUri()).run {
+                    context?.startActivity(this)
+                }
+            }
+
+            if (color != null){
+                tvPersyaratan.text = getString(R.string.SnK).customTextColor(
+                    resources.configuration.locales[0].language,
+                    color,
+                    actionInc,
+                    actionPolicy
+                )
+            }
+        }
+
     }
 
     override fun onCreateView(

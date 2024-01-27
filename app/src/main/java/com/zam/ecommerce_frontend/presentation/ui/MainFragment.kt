@@ -1,5 +1,6 @@
 package com.zam.ecommerce_frontend.presentation.ui
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -25,7 +27,6 @@ class MainFragment : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.topAppBar.setOnClickListener {
@@ -58,10 +59,13 @@ class MainFragment : Fragment() {
             }
         }
     }
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.appbar_menu, menu)
 
     }
+    @Suppress("DEPRECATION")
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         binding.topAppBar.logo
         return when (item.itemId) {

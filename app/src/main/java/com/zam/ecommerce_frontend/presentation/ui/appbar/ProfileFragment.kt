@@ -19,12 +19,17 @@ import androidx.navigation.fragment.findNavController
 import android.Manifest
 import android.content.ContentResolver
 import android.net.Uri
+import android.text.method.LinkMovementMethod
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentProfileBinding
+import com.zam.ecommerce_frontend.presentation.ui.auth.LoginFragment
 import com.zam.ecommerce_frontend.presentation.utils.Constant
 import com.zam.ecommerce_frontend.presentation.utils.ImageSaver
 import com.zam.ecommerce_frontend.presentation.utils.Utils
+import com.zam.ecommerce_frontend.presentation.utils.Utils.customTextColor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -56,6 +61,9 @@ class ProfileFragment : Fragment() {
         binding.btnSelesai.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_mainFragment)
         }
+        val login = LoginFragment()
+        setTvPersyaratan()
+
     }
 
     private fun initView() {
@@ -63,10 +71,39 @@ class ProfileFragment : Fragment() {
             ivProfileImage.setImageResource(R.drawable.ic_person)
             fieldName.hint = getString(R.string.selesai)
             btnSelesai.text = getString(R.string.selesai)
-            tvPersyaratan.text = Utils.customTextColor(
-                requireActivity(), getString(R.string.SnK)
-            )
+
         }
+    }
+
+    private fun setTvPersyaratan(){
+        with(binding) {
+
+        }
+        with(binding){
+            tvPersyaratan.movementMethod = LinkMovementMethod.getInstance()
+            val color = context?.let { ContextCompat.getColor(it, R.color.primary) }
+
+            val actionInc : () -> Unit = {
+                Intent(Intent.ACTION_VIEW, Constant.linkTvPersyaratan.toUri()).run {
+                    context?.startActivity(this)
+                }
+            }
+            val actionPolicy : () -> Unit = {
+                Intent(Intent.ACTION_VIEW, Constant.linkTvPersyaratan.toUri()).run {
+                    context?.startActivity(this)
+                }
+            }
+
+            if (color != null){
+                tvPersyaratan.text = getString(R.string.SnK).customTextColor(
+                    resources.configuration.locales[0].language,
+                    color,
+                    actionInc,
+                    actionPolicy
+                )
+            }
+        }
+
     }
 
     private fun showImagePickerDialog() {

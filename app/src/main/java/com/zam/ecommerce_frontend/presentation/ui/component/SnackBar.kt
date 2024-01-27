@@ -12,13 +12,14 @@ import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.snackbar.Snackbar.SnackbarLayout
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.LayoutSuccessBinding
 
 object SnackBar {
 
     @SuppressLint("RestrictedApi")
-        fun createSnackbar(
+        fun createSnackBar(
             context: Context,
             view: View,
             text: String,
@@ -28,14 +29,14 @@ object SnackBar {
             val binding = LayoutSuccessBinding.inflate(inflater)
             val snackBar = Snackbar.make(view, "", Snackbar.LENGTH_INDEFINITE)
 
-            val snackBarLayout = snackBar.view as Snackbar.SnackbarLayout
+            val snackBarLayout = snackBar.view as SnackbarLayout
             binding.messageView.text = text
-        snackBarLayout.apply {
+            snackBarLayout.apply {
                 val layoutParam = layoutParams as FrameLayout.LayoutParams
                 layoutParam.gravity = Gravity.TOP
                 layoutParams = layoutParam
             }
-        snackBarLayout.addView(binding.root)
+            snackBarLayout.addView(binding.root)
 
             snackBar.apply {
                 view.setBackgroundColor(Color.TRANSPARENT)
@@ -70,7 +71,7 @@ object SnackBar {
                     }
 
                 })
-                show()
+                snackBar.show()
             }
         }
 }

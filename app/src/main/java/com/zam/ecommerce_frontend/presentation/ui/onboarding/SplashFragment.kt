@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.zam.ecommerce_frontend.R
 import com.zam.ecommerce_frontend.databinding.FragmentSplashBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SplashFragment : Fragment() {
@@ -27,13 +30,13 @@ class SplashFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val time = 2000
-        Handler(Looper.getMainLooper()).postDelayed({
-           findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
-        }, time.toLong())
         animation()
         animation2()
         animation3()
+        lifecycleScope.launch {
+            delay(2000)
+            navigateController()
+        }
     }
 
     private fun animation(){
@@ -50,6 +53,14 @@ class SplashFragment : Fragment() {
         ObjectAnimator.ofFloat(binding.cardGreen, View.TRANSLATION_Y,  -200f).apply {
             duration = 2000
         }.start()
+    }
+    private fun navigateController(){
+        viewModel.appOnboardingLiveData.observe(viewLifecycleOwner){ isActive ->
+            when(isActive){
+                true -> findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+                else -> findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
+            }
+        }
     }
 
 }

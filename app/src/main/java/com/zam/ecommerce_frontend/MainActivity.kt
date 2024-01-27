@@ -5,17 +5,18 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import com.zam.ecommerce_frontend.databinding.ActivityMainBinding
 import com.zam.ecommerce_frontend.presentation.ui.home.HomeViewModel
+import com.zam.ecommerce_frontend.presentation.utils.Constant.en
+import com.zam.ecommerce_frontend.presentation.utils.Constant.idn
 import com.zam.ecommerce_frontend.presentation.utils.Localization
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-    private val binding : ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding : ActivityMainBinding
     private val viewModel : HomeViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setDarkMode()
         setUpLocalization()
@@ -36,9 +37,5 @@ class MainActivity : AppCompatActivity() {
                 else -> Localization.setLocale(this, en)
             }
         }
-    }
-    companion object {
-        val idn = "in"
-        val en = "en"
     }
 }
